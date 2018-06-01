@@ -104,7 +104,7 @@ void MailManager::update()
 
 void MailManager::updateText()
 {
-   // m_text.setText(m_currentAddress);
+    m_text.setText(m_currentAddress);
 }
 
 
@@ -132,21 +132,20 @@ void MailManager::checkEmail(const string& address)
     
     ofLoadURLAsync(m_url, m_currentAddress);
     
-    ofHttpResponse resp = ofLoadURL("https://api.trumail.io/v2/lookups/xml?email=imanolgo@gmail.com&token=e2e9b949-a9e9-489b-9d8f-7f012564c742");
-    ofLogNotice() <<"ApiManager::checkEmail -> DATA " <<  resp.data ;
+    //ofHttpResponse resp = ofLoadURL("https://api.trumail.io/v2/lookups/xml?email=imanolgo@gmail.com&token=e2e9b949-a9e9-489b-9d8f-7f012564c742");
+    //ofLogNotice() <<"ApiManager::checkEmail -> DATA " <<  resp.data ;
     
 }
 
 void MailManager::urlResponse(ofHttpResponse & response)
 {
-    ofLogNotice() <<"ApiManager::urlResponse -> " << response.data << ", " << response.status;
+    //ofLogNotice() <<"ApiManager::urlResponse -> " << response.data << ", " << response.status;
     
     
     if(response.status==200)
     {
         ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
-        
-        //this->parseResult(response.data);
+        this->parseResult(response.data);
     }
 }
 
@@ -155,26 +154,33 @@ void MailManager::parseResult(const string& data)
     ofLogNotice() <<"ApiManager::parseResult -> Data: " << data;
     ofXml xml;
     
-    if(!xml.parse( data )){
+    if(!xml.loadFromBuffer( data )){
         ofLogNotice() <<"ApiManager::parseResult << Unable to parse data: " << data;
         return;
     }
     
-    string path = "//lookup/deliverable";
-    auto xmlChild = xml.findFirst(path);
-    bool derivable = xmlChild.getBoolValue();
+    xml.setTo("//");
     
-    path = "//lookup/address";
-    xmlChild = xml.findFirst(path);
-    string address = xmlChild.getValue();
-   
-    if(derivable){
-        ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DERIVABLE!";
+    string path = "//lookup";
+    
+    if(xml.exists(path)) {
+        xml.setTo(path);
+        typedef   std::map<string, string>   AttributesMap;
+        AttributesMap attributes = xml.getAttributes();
+        
+        bool derivable = xml.getValue<string>("derivable") == "true";
+        string address =  xml.getValue<string>("address");
+
+        if(derivable){
+            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DERIVABLE!";
+        }
+        else{
+            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DERIVABLE!";
+        }
     }
     else{
-        ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DERIVABLE!";
+        ofLogNotice() <<"ApiManager::parseResult << path does not exist: " << path;
     }
-    
     
 }
 

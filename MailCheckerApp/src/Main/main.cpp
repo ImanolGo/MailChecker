@@ -4,9 +4,7 @@
 //========================================================================
 int main( ){
     
-    ofGLWindowSettings settings;
-    settings.setGLVersion(2,1);
-    ofCreateWindow(settings);
+  ofSetupOpenGL(1024,768, OF_WINDOW);            // <-------- setup the GL context
   
   ofRunApp( new MailCheckerApp());
    

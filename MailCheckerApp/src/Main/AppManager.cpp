@@ -62,7 +62,7 @@ void AppManager::setupOF()
     ofSetEscapeQuitsApp(true);
     ofSetBackgroundAuto(true);
     ofTrueTypeFont::setGlobalDpi(72);
-    //ofSetDataPathRoot("../Resources/data/");
+    ofSetDataPathRoot("../Resources/data/");
     
 }
 

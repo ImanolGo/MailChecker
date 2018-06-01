@@ -51,7 +51,7 @@ void GuiManager::setup()
 void GuiManager::setupGuiParameters()
 {
     m_gui.setPosition(ofxDatGuiAnchor::TOP_LEFT);
-    //m_gui.setAssetPath(ofToDataPath("fonts/"));
+    m_gui.setAssetPath(ofToDataPath("fonts/"));
     //m_gui.setAssetPath("../Resources/data/fonts/");
     m_gui.setTheme(new GuiTheme());
     
@@ -65,7 +65,6 @@ void GuiManager::setupGuiParameters()
     m_gui.addFRM();
     auto toggle = m_gui.addToggle("Fullscreen");
     toggle->setChecked(true);
-    toggle = m_gui.addToggle("Syphon");
     
     m_gui.addBreak();
 }
@@ -118,15 +117,14 @@ void GuiManager::drawGui()
 void GuiManager::saveGuiValues()
 {
     ofXml xml;
-    ofSerialize(xml, m_parameters);
+    xml.serialize(m_parameters);
     xml.save(GUI_SETTINGS_FILE_NAME);
 }
 
 void GuiManager::loadGuiValues()
 {
-    ofXml xml;
-    xml.load(GUI_SETTINGS_FILE_NAME);
-    ofDeserialize(xml, m_parameters);
+    ofXml xml(GUI_SETTINGS_FILE_NAME);
+    xml.deserialize(m_parameters);
 }
 
 

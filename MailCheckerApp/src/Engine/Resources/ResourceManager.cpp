@@ -66,6 +66,8 @@ void ResourceManager::loadTextures()
 }
 
 
+
+
 ofPtr<ofTexture> ResourceManager::getTexture(const string& name) const
 {
     if(this->containsTexture(name)) {
@@ -90,8 +92,6 @@ bool ResourceManager::containsTexture(const string& name) const
 
 	return true;
 }
-
-
 
 
 

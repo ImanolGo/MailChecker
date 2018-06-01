@@ -49,7 +49,8 @@ class ResourceManager: public Manager
 
 		//! Loads all the textures.
 		void loadTextures();
-    
+
+
 	private:
 
 		//======================= Typedefs =====================================
