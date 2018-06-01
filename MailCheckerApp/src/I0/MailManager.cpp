@@ -8,6 +8,7 @@
 
 #include "MailManager.h"
 #include "AppManager.h"
+#include "ofxJSON.h"
 
 
 MailManager::MailManager(): Manager(), m_currentAddress("imanolgo@gmail.com")
@@ -47,7 +48,7 @@ void MailManager::setupText()
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     
-    float size = 60;
+    float size = 50;
     float w = width -  4*LayoutManager::MARGIN;
     
     float h = size;
@@ -152,36 +153,22 @@ void MailManager::urlResponse(ofHttpResponse & response)
 void MailManager::parseResult(const string& data)
 {
     ofLogNotice() <<"ApiManager::parseResult -> Data: " << data;
-    ofXml xml;
+    ofxJSONElement json;
     
-    if(!xml.loadFromBuffer( data )){
-        ofLogNotice() <<"ApiManager::parseResult << Unable to parse data: " << data;
-        return;
-    }
-    
-    xml.setTo("//");
-    
-    string path = "//lookup";
-    
-    if(xml.exists(path)) {
-        xml.setTo(path);
-        typedef   std::map<string, string>   AttributesMap;
-        AttributesMap attributes = xml.getAttributes();
+    if(json.parse(data)){
+        bool derivable = json["deliverable"].asBool();
+        string address = json["address"].asString();
         
-        bool derivable = xml.getValue<string>("derivable") == "true";
-        string address =  xml.getValue<string>("address");
-
         if(derivable){
-            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DERIVABLE!";
+            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DELIVERABLE!";
         }
         else{
-            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DERIVABLE!";
+            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DELIVERABLE!";
         }
     }
     else{
-        ofLogNotice() <<"ApiManager::parseResult << path does not exist: " << path;
+        ofLogNotice() <<"ApiManager::parseResult << unable to parse json ";
     }
-    
 }
 
 

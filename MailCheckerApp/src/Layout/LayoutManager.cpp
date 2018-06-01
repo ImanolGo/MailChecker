@@ -46,6 +46,7 @@ void LayoutManager::setup()
     this->createImageVisuals();
     
     this->setupFbo();
+    this->resetWindowRect();
 }
 
 void LayoutManager::setupFbo()
@@ -190,7 +191,7 @@ void LayoutManager::draw()
     if(!m_initialized)
         return;
     
-    this->drawText();
+    //this->drawText();
     this->drawFbo();
     
 }

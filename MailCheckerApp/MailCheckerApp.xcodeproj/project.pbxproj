@@ -37,6 +37,7 @@
 		93510377552D47B6620A7586 /* LayoutManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4229475864D5EBC7913C8351 /* LayoutManager.cpp */; };
 		9D9E0E996DA1B9AC9952C889 /* ViewManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE37A31C904F445222B25FC /* ViewManager.cpp */; };
 		A140A9C9C5F9C485DE111964 /* MailCheckerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A51094A439A8AD619C028599 /* MailCheckerApp.cpp */; };
+		B06574BCAF32BEF786A4DA54 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46A474DDF5ECEB1CB7F53658 /* ofxJSONElement.cpp */; };
 		B790DA4F42194210B9259E42 /* VisualEffectsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEDDA11B665FA62A298B7C39 /* VisualEffectsManager.cpp */; };
 		B7993B374B98F50CBD9EC220 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 074978820820325AB8737225 /* README.md */; };
 		C6B3BFC2668F137F745DC3C6 /* CameraAnimationsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C01FEEAD29823C01C4EEC27 /* CameraAnimationsManager.cpp */; };
@@ -51,6 +52,7 @@
 		E49699C1F3B736D5847985D8 /* license.txt in Sources */ = {isa = PBXBuildFile; fileRef = D5BBC200839D2DFA77CB6DDF /* license.txt */; };
 		E66F471FC218F559192473CB /* VideoVisual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 478D509B2DE7CC0EC16A7E2A /* VideoVisual.cpp */; };
 		EC108074DB75C3CD93A7DADF /* ofUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4DEA9B316209449F17ED538 /* ofUTF8.cpp */; };
+		F43F6B46BE86E63D9837FBF4 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A18FD7E595E1ABEF3EF5A33 /* jsoncpp.cpp */; };
 		F7EA3801298F5E54967C119B /* ImageVisual3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6F074B2A9C65331157B2C /* ImageVisual3D.cpp */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,7 @@
 		074978820820325AB8737225 /* README.md */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = README.md; path = src/Addons/ofxUnicode/README.md; sourceTree = SOURCE_ROOT; };
 		08C5194B0C92DDA2A7539395 /* core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = core.h; path = src/Addons/ofxUnicode/libs/utf8cpp/src/utf8_v2_3_1/source/utf8/core.h; sourceTree = SOURCE_ROOT; };
 		09F8F2DF1D53E65319F30B96 /* LightManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LightManager.cpp; path = src/Engine/3D/LightManager.cpp; sourceTree = SOURCE_ROOT; };
+		0A18FD7E595E1ABEF3EF5A33 /* jsoncpp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = jsoncpp.cpp; path = src/Addons/ofxJSON/libs/jsoncpp/src/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
 		0C1C0F60B9ED693828ED32A8 /* ofUnicode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofUnicode.h; path = src/Addons/ofxUnicode/src/ofUnicode.h; sourceTree = SOURCE_ROOT; };
 		0D6BA477FB3EDF7F300DE7A5 /* MailManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MailManager.h; path = src/I0/MailManager.h; sourceTree = SOURCE_ROOT; };
 		0E13F8EA447BEE4F113C15AB /* ofTextConverter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofTextConverter.cpp; path = src/Addons/ofxUnicode/src/ofTextConverter.cpp; sourceTree = SOURCE_ROOT; };
@@ -103,6 +106,7 @@
 		1D7B4D07648F9CB293716166 /* ImageVisual3D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ImageVisual3D.h; path = src/Engine/Visuals/ImageVisual3D.h; sourceTree = SOURCE_ROOT; };
 		1E0FC185DC65CED9B6295DDD /* checked.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = checked.h; path = src/Addons/ofxUnicode/libs/utf8cpp/src/utf8_v2_3_1/source/utf8/checked.h; sourceTree = SOURCE_ROOT; };
 		1F6584F96693D0D8399C3C75 /* ofUTF8.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofUTF8.h; path = src/Addons/ofxUnicode/src/ofUTF8.h; sourceTree = SOURCE_ROOT; };
+		2223C55194E0B58170444FF6 /* json-forwards.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "json-forwards.h"; path = "src/Addons/ofxJSON/libs/jsoncpp/include/json/json-forwards.h"; sourceTree = SOURCE_ROOT; };
 		28750EB1F29939E567A9840E /* ofxDatGuiIntObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDatGuiIntObject.h; path = src/Addons/ofxDatGui/src/core/ofxDatGuiIntObject.h; sourceTree = SOURCE_ROOT; };
 		2A2B7E7FDC1CFF4A547CC661 /* VisualEffects.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VisualEffects.h; path = src/Engine/Visuals/VisualEffects.h; sourceTree = SOURCE_ROOT; };
 		2B4B2ADD7835086200B43A2B /* ofxCsv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxCsv.h; path = src/Addons/ofxCsv/src/ofxCsv.h; sourceTree = SOURCE_ROOT; };
@@ -116,9 +120,11 @@
 		41669C415AE6E1805319DE64 /* ofxDatGuiTextInputField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDatGuiTextInputField.h; path = src/Addons/ofxDatGui/src/components/ofxDatGuiTextInputField.h; sourceTree = SOURCE_ROOT; };
 		4200D36803B7AF1358A6C072 /* ofxDatGuiTheme.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxDatGuiTheme.h; path = src/Addons/ofxDatGui/src/themes/ofxDatGuiTheme.h; sourceTree = SOURCE_ROOT; };
 		4229475864D5EBC7913C8351 /* LayoutManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LayoutManager.cpp; path = src/Layout/LayoutManager.cpp; sourceTree = SOURCE_ROOT; };
+		46A474DDF5ECEB1CB7F53658 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxJSONElement.cpp; path = src/Addons/ofxJSON/src/ofxJSONElement.cpp; sourceTree = SOURCE_ROOT; };
 		478D509B2DE7CC0EC16A7E2A /* VideoVisual.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = VideoVisual.cpp; path = src/Engine/Visuals/VideoVisual.cpp; sourceTree = SOURCE_ROOT; };
 		4907E8B0250B798D3E6F09A1 /* GuiManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GuiManager.cpp; path = src/Layout/GuiManager.cpp; sourceTree = SOURCE_ROOT; };
 		496FB8BB67BF37BF8B96AD33 /* SettingsManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SettingsManager.h; path = src/Main/SettingsManager.h; sourceTree = SOURCE_ROOT; };
+		4B39AD4372593B010D48CB2F /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSONElement.h; path = src/Addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		4C24B2C372E7EE6C3EDCE881 /* VideoVisual.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VideoVisual.h; path = src/Engine/Visuals/VideoVisual.h; sourceTree = SOURCE_ROOT; };
 		4F661FE0411AA0AC01E34CB7 /* ImageVisual.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ImageVisual.cpp; path = src/Engine/Visuals/ImageVisual.cpp; sourceTree = SOURCE_ROOT; };
 		4FE37A31C904F445222B25FC /* ViewManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ViewManager.cpp; path = src/Engine/Visuals/ViewManager.cpp; sourceTree = SOURCE_ROOT; };
@@ -154,6 +160,7 @@
 		9A41D072889FC9C8F4082F5C /* CameraAnimationsManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CameraAnimationsManager.h; path = src/Engine/3D/CameraAnimationsManager.h; sourceTree = SOURCE_ROOT; };
 		9BD3C8D3CE2F9DE9C86B751B /* utf8.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = utf8.h; path = src/Addons/ofxUnicode/libs/utf8cpp/include/utf8.h; sourceTree = SOURCE_ROOT; };
 		9C67249D70841A7148965565 /* TextVisual.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TextVisual.h; path = src/Engine/Visuals/TextVisual.h; sourceTree = SOURCE_ROOT; };
+		9F376BB97A2DCE14AD6DCC36 /* json.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = json.h; path = src/Addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
 		A01E3068BFA24F657DF38672 /* icon-group-open.png */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "icon-group-open.png"; path = "src/Addons/ofxDatGui/ofxbraitsch/ofxdatgui/icon-group-open.png"; sourceTree = SOURCE_ROOT; };
 		A05F1DCF8180DEEC9FBAE585 /* CameraAnimations.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = CameraAnimations.cpp; path = src/Engine/3D/CameraAnimations.cpp; sourceTree = SOURCE_ROOT; };
 		A29639DFC905F9941E01F8A6 /* icon-radio-on.png */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "icon-radio-on.png"; path = "src/Addons/ofxDatGui/ofxbraitsch/ofxdatgui/icon-radio-on.png"; sourceTree = SOURCE_ROOT; };
@@ -170,6 +177,7 @@
 		BF8A24D906675604DC2873AD /* ofTextConverter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofTextConverter.h; path = src/Addons/ofxUnicode/src/ofTextConverter.h; sourceTree = SOURCE_ROOT; };
 		C4DEA9B316209449F17ED538 /* ofUTF8.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofUTF8.cpp; path = src/Addons/ofxUnicode/src/ofUTF8.cpp; sourceTree = SOURCE_ROOT; };
 		C5C837BC8A64CCF1A788C49A /* checked.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = checked.h; path = src/Addons/ofxUnicode/libs/utf8cpp/include/utf8/checked.h; sourceTree = SOURCE_ROOT; };
+		CA426483C5DB6CC604662500 /* ofxJSON.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSON.h; path = src/Addons/ofxJSON/src/ofxJSON.h; sourceTree = SOURCE_ROOT; };
 		CDE836347DD62CE81C6BDAD8 /* ofxCsv.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxCsv.cpp; path = src/Addons/ofxCsv/src/ofxCsv.cpp; sourceTree = SOURCE_ROOT; };
 		D26C09D837E4FD6CBDBE2B8C /* AppManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = AppManager.h; path = src/Main/AppManager.h; sourceTree = SOURCE_ROOT; };
 		D2A2BE33BFF330BDC05A7FC5 /* managers.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = managers.h; path = src/Main/managers.h; sourceTree = SOURCE_ROOT; };
@@ -225,6 +233,15 @@
 			name = ofxEasing;
 			sourceTree = "<group>";
 		};
+		0FBE237807FFD0DF7C2EF22D /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				2A0EA99C6E81E6E514A70871 /* libs */,
+				73CB2748E446D8A2A38FB549 /* src */,
+			);
+			name = ofxJSON;
+			sourceTree = "<group>";
+		};
 		1646F71220FE0F0638559519 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +274,14 @@
 			name = ofxbraitsch;
 			sourceTree = "<group>";
 		};
+		2A0EA99C6E81E6E514A70871 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				8D05B74BF52C70EF8770606A /* jsoncpp */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		375D8B140B52B55EB32EB487 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +292,23 @@
 				78E61E440A21EE9FC6156AAD /* LayoutManager.h */,
 			);
 			name = Layout;
+			sourceTree = "<group>";
+		};
+		37EE087BE6F3E527693C0011 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0A18FD7E595E1ABEF3EF5A33 /* jsoncpp.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		3C5353971DC737C98F2F2FFB /* json */ = {
+			isa = PBXGroup;
+			children = (
+				2223C55194E0B58170444FF6 /* json-forwards.h */,
+				9F376BB97A2DCE14AD6DCC36 /* json.h */,
+			);
+			name = json;
 			sourceTree = "<group>";
 		};
 		51215486FD04C7A6B90A7559 /* Visuals */ = {
@@ -320,6 +362,16 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
+		73CB2748E446D8A2A38FB549 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CA426483C5DB6CC604662500 /* ofxJSON.h */,
+				46A474DDF5ECEB1CB7F53658 /* ofxJSONElement.cpp */,
+				4B39AD4372593B010D48CB2F /* ofxJSONElement.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		74A312B2568D421CAAEF740A /* ofxDatGui */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +404,15 @@
 				7C276A6F0FF11D85F661482E /* ofxDatGuiTimeGraph.h */,
 			);
 			name = components;
+			sourceTree = "<group>";
+		};
+		8D05B74BF52C70EF8770606A /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				CD8C18DFBA670E85690885B0 /* include */,
+				37EE087BE6F3E527693C0011 /* src */,
+			);
+			name = jsoncpp;
 			sourceTree = "<group>";
 		};
 		8DF915E9BCC12CEE70C66335 /* ofxSmartFont */ = {
@@ -442,6 +503,7 @@
 				DB9E67B931F81D181AB65C02 /* ofxCsv */,
 				74A312B2568D421CAAEF740A /* ofxDatGui */,
 				08E16ED5FD8D48C6776B1270 /* ofxEasing */,
+				0FBE237807FFD0DF7C2EF22D /* ofxJSON */,
 				5AB3D1C9554E1FFF8C5DF1B7 /* ofxTextSuite */,
 				E169B214A1F94FFA3FFBBE8C /* ofxUnicode */,
 			);
@@ -515,6 +577,14 @@
 				5B9CF9B2B47C1875E34834E9 /* unchecked.h */,
 			);
 			name = utf8;
+			sourceTree = "<group>";
+		};
+		CD8C18DFBA670E85690885B0 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3C5353971DC737C98F2F2FFB /* json */,
+			);
+			name = include;
 			sourceTree = "<group>";
 		};
 		D07A89D016153935BE7B3B9E /* src */ = {
@@ -755,6 +825,8 @@
 				DF2764E1860DD2D324923A1D /* ofxDatGuiComponent.cpp in Sources */,
 				059F15A57C00F89CF43FDDD6 /* ofxSmartFont.cpp in Sources */,
 				49EE14834E328B244122B5DE /* ofxDatGui.cpp in Sources */,
+				F43F6B46BE86E63D9837FBF4 /* jsoncpp.cpp in Sources */,
+				B06574BCAF32BEF786A4DA54 /* ofxJSONElement.cpp in Sources */,
 				00F8DAC81953313F8180A13C /* ofxTextBlock.cpp in Sources */,
 				D75E4524BBB94FF34BF7DD48 /* ReleaseNotes in Sources */,
 				82C668F7D0DF704AD7D1BB1C /* utf8cpp.html in Sources */,
@@ -828,6 +900,9 @@
 					src/Addons/ofxDatGui/src/libs/ofxSmartFont,
 					src/Addons/ofxDatGui/src/themes,
 					src/Addons/ofxEasing/src,
+					src/Addons/ofxJSON/libs/jsoncpp/include/json,
+					src/Addons/ofxJSON/libs/jsoncpp/src,
+					src/Addons/ofxJSON/src,
 					src/Addons/ofxTextSuite/src,
 					src/Addons/ofxUnicode,
 					src/Addons/ofxUnicode/libs/utf8cpp/include,
@@ -886,6 +961,9 @@
 					src/Addons/ofxDatGui/src/libs/ofxSmartFont,
 					src/Addons/ofxDatGui/src/themes,
 					src/Addons/ofxEasing/src,
+					src/Addons/ofxJSON/libs/jsoncpp/include/json,
+					src/Addons/ofxJSON/libs/jsoncpp/src,
+					src/Addons/ofxJSON/src,
 					src/Addons/ofxTextSuite/src,
 					src/Addons/ofxUnicode,
 					src/Addons/ofxUnicode/libs/utf8cpp/include,
@@ -937,6 +1015,9 @@
 					src/Addons/ofxDatGui/src/libs/ofxSmartFont,
 					src/Addons/ofxDatGui/src/themes,
 					src/Addons/ofxEasing/src,
+					src/Addons/ofxJSON/libs/jsoncpp/include,
+					src/Addons/ofxJSON/libs/jsoncpp/src,
+					src/Addons/ofxJSON/src,
 					src/Addons/ofxTextSuite/src,
 					src/Addons/ofxUnicode,
 					src/Addons/ofxUnicode/libs/utf8cpp/include,
@@ -988,6 +1069,9 @@
 					src/Addons/ofxDatGui/src/libs/ofxSmartFont,
 					src/Addons/ofxDatGui/src/themes,
 					src/Addons/ofxEasing/src,
+					src/Addons/ofxJSON/libs/jsoncpp/include,
+					src/Addons/ofxJSON/libs/jsoncpp/src,
+					src/Addons/ofxJSON/src,
 					src/Addons/ofxTextSuite/src,
 					src/Addons/ofxUnicode,
 					src/Addons/ofxUnicode/libs/utf8cpp/include,

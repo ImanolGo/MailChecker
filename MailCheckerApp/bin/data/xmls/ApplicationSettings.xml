@@ -11,7 +11,7 @@
   </of_settings>
 
   <api>
-       <trumail url = "https://api.trumail.io/v2/lookups/xml?email=" key="04055a42-ebed-4d1a-8773-fd7cde3457c0"/>
+       <trumail url = "https://api.trumail.io/v2/lookups/json?email=" key="04055a42-ebed-4d1a-8773-fd7cde3457c0"/>
 
   </api>
 
