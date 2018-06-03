@@ -11,7 +11,7 @@
 #include "ofxJSON.h"
 
 
-MailManager::MailManager(): Manager(), m_currentAddress("imanolgo@gmail.com")
+MailManager::MailManager(): Manager(), m_currentAddress("imanolgo@gmail.com"), m_currentRow(0)
 {
     //Intentionally left empty
 }
@@ -64,20 +64,96 @@ void MailManager::setupText()
 
 
 
-bool MailManager::loadFile(string path)
+bool MailManager::loadFile(const string& path)
+{
+    if(this->loadCSV(path) &&  this->checkFormat()){
+        this->startValidation();
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool MailManager::loadCSV(const string& path)
 {
     // Load a CSV File.
-    if(m_csv.loadAndParse(path,",","#"))
+    if(m_csv.loadAndParse(path,";","#"))
     {
         ofLogNotice() <<"MailManager::loadFile -> Successfully loaded: "<< path ;
         ofLogNotice() <<"MailManager::loadFile -> csv rows: "<< m_csv.getNumRows() << ", csv cols: " << m_csv.getNumCols();
+        m_path = path;
         return true;
         
     }
     else
     {
         ofLogNotice() <<"MailManager::loadFile -> Unable to load : "<< path ;
-         return false;
+        return false;
+    }
+}
+
+bool MailManager::checkFormat()
+{
+    if(m_csv.getNumRows() <= 0 || m_csv.getNumCols() <= 0){
+        return false;
+    }
+    
+    if(m_csv.getRow(0).getString(0) == "CONTACTED"){
+        ofLogNotice() <<"MailManager::checkFormat -> CSV formatetd correclty ";
+        return true;
+    }
+    
+    ofLogNotice() <<"MailManager::checkFormat -> Not valid CSV format";
+    return false;
+}
+
+void MailManager::startValidation()
+{
+    m_currentRow = 0;
+    this->validateNextRow();
+   
+}
+
+void MailManager::validateNextRow()
+{
+    m_currentRow++;
+    ofLogNotice() <<"MailManager::validateNextRow: row num = " << m_currentRow;
+    
+    while(m_currentRow<m_csv.getNumRows()){
+        string address = m_csv.getRow(m_currentRow).getString(7);
+        if(address!=""){
+            ofLogNotice() <<"MailManager::validateCurretRow -> Verifying email address: " << address;
+            this->checkEmail(address);
+            break;
+        }
+        
+        m_currentRow++;
+        ofLogNotice() <<"MailManager::validateNextRow: row num = " << m_currentRow;
+    }
+    
+    if(m_currentRow>=m_csv.getNumRows()){
+        ofLogNotice() <<"MailManager::validateCurretRow -> FINISHED!!";
+        this->saveResults();
+        return;
+    }
+}
+
+void MailManager::createAddressList()
+{
+    m_addressList.clear();
+    string first = m_csv.getRow(m_currentRow).getString();
+    last;
+    
+}
+
+void MailManager::saveResults()
+{
+    if( m_csv.save(m_path)){
+        ofLogNotice() <<"MailManager::saveResults -> Successfully saved: " << m_path;
+    }
+    else{
+        ofLogNotice() <<"MailManager::saveResults ->Unable to save: " << m_path;
     }
 }
 
@@ -147,6 +223,12 @@ void MailManager::urlResponse(ofHttpResponse & response)
     {
         ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
         this->parseResult(response.data);
+        this->validateNextRow();
+    }
+    else if(response.status==500){
+        ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
+        m_csv.getRow(m_currentRow).setString(8,"False");
+        this->validateNextRow();
     }
 }
 
@@ -161,9 +243,11 @@ void MailManager::parseResult(const string& data)
         
         if(derivable){
             ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DELIVERABLE!";
+            m_csv.getRow(m_currentRow).setString(8,"True");
         }
         else{
             ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DELIVERABLE!";
+                m_csv.getRow(m_currentRow).setString(8,"False");
         }
     }
     else{

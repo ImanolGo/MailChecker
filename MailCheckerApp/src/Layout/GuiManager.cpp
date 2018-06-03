@@ -66,6 +66,8 @@ void GuiManager::setupGuiParameters()
     auto toggle = m_gui.addToggle("Fullscreen");
     toggle->setChecked(true);
     
+    m_gui.addButton("* LOAD");
+    
     m_gui.addBreak();
 }
 
@@ -163,6 +165,11 @@ void GuiManager::onColorPickerEvent(ofxDatGuiColorPickerEvent e)
 void GuiManager::onButtonEvent(ofxDatGuiButtonEvent e)
 {
     cout << "onButtonEvent: " << e.target->getName() << " Selected" << endl;
+    
+    if(e.target->getName() == "* LOAD")
+    {
+        this->openSystemDialog();
+    }
 
 }
 

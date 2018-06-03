@@ -40,7 +40,7 @@ public:
     void draw();
     
     //! loads a file given a path
-    bool loadFile(string path);
+    bool loadFile(const string& path);
     
     //! reloads the current file
     bool reloadFile();
@@ -64,12 +64,33 @@ private:
     
     void parseResult(const string& result);
     
+    bool loadCSV(const string& path);
+    
+    bool checkFormat();
+    
+    void startValidation();
+    
+    void validateNextRow();
+    
+    void saveResults();
+    
+    void createAddressList();
+    
 private:
     
     ofxCsv m_csv;
-    string m_currentAddress;
+    vector<string>  m_addressList;
     
+    string m_currentAddress;
     TextVisual   m_text;
     string       m_url;
+    int          m_currentRow;
+    string       m_path;
+    int          m_emailIndex;
+    int          m_domainIndex;
+    int          m_firstNameIndex;
+    int          m_lastNameIndex;
+    int          m_lastNameIndex;
+    
 };
 
