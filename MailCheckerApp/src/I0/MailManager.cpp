@@ -12,7 +12,7 @@
 
 
 MailManager::MailManager(): Manager(), m_currentAddress("imanol.gomez@thepowerhouse.group"), m_currentRow(0), m_emailIndex(0), m_domainIndex(0),
-m_firstNameIndex(0), m_lastNameIndex(0), m_deliverabilityIndex(0)
+m_firstNameIndex(0), m_lastNameIndex(0), m_deliverabilityIndex(0), m_deliverable(true)
 {
     //Intentionally left empty
 }
@@ -49,18 +49,28 @@ void MailManager::setupText()
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     
-    float size = 50;
+    float size = 40;
     float w = width -  4*LayoutManager::MARGIN;
     
     float h = size;
     float x = width*0.5;
-    float y = height*0.5;
+    float y = 2*height/3;
     ofPoint pos = ofPoint(x, y);
     string text = "Email";
     string fontName = LayoutManager::LAYOUT_FONT;
     
-    m_text = TextVisual(pos,w,h,true);
-    m_text.setText(text, fontName, size, ofColor::white);
+    m_currentAddressText = TextVisual(pos,w,h,true);
+    m_currentAddressText.setText(text, fontName, size, ofColor::white);
+    
+    size/=2;
+    h = size;
+    x = width*0.5;
+    y = 1*height/3;
+    pos = ofPoint(x, y);
+    text = " ";
+    
+    m_previousAddressText = TextVisual(pos,w,h,true);
+    m_previousAddressText.setText(text, fontName, size, ofColor::white);
 }
 
 
@@ -273,7 +283,15 @@ void MailManager::update()
 
 void MailManager::updateText()
 {
-    m_text.setText(m_currentAddress);
+    m_previousAddressText.setText(m_previousAddress);
+    m_currentAddressText.setText(m_currentAddress);
+    
+    if(m_deliverable){
+        m_previousAddressText.setColor(ofColor::green);
+    }
+    else{
+        m_previousAddressText.setColor(ofColor::red);
+    }
 }
 
 
@@ -285,7 +303,9 @@ void MailManager::draw()
 
 void MailManager::drawText()
 {
-    m_text.draw();
+    m_currentAddressText.draw();
+    m_previousAddressText.draw();
+
 }
 
 void MailManager::checkEmail(const string& address)
@@ -296,6 +316,7 @@ void MailManager::checkEmail(const string& address)
     m_url+=AppManager::getInstance().getSettingsManager().getKey();
     
     ofLogNotice() <<"ApiManager::checkEmail -> url " << m_url;
+    m_previousAddress = m_currentAddress;
     m_currentAddress = address;
     this->updateText();
     
@@ -318,11 +339,25 @@ void MailManager::urlResponse(ofHttpResponse & response)
     }
     else if(response.status==500){
         ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
-        m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
+        this->setDeliverable(false);
         this->createAddressList();
         this->validateNextRow();
     }
 }
+
+void MailManager::setDeliverable(bool value)
+{
+    m_deliverable = value;
+    if(m_deliverable){
+         ofLogNotice() <<"ApiManager::setDeliverable << Email " << m_currentAddress << " is DELIVERABLE!";
+         m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"True");
+    }
+    else{
+          ofLogNotice() <<"ApiManager::setDeliverable << Email " << m_currentAddress << " is NOT  DELIVERABLE!";
+          m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
+    }
+}
+
 
 void MailManager::parseResult(const string& data)
 {
@@ -332,17 +367,8 @@ void MailManager::parseResult(const string& data)
     if(json.parse(data)){
         bool derivable = json["deliverable"].asBool();
         string address = json["address"].asString();
+        this->setDeliverable(derivable);
         
-        if(derivable){
-            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DELIVERABLE!";
-            m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"True");
-        }
-        else{
-            ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DELIVERABLE!";
-                m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
-                this->createAddressList();
-            
-        }
     }
     else{
         ofLogNotice() <<"ApiManager::parseResult << unable to parse json ";

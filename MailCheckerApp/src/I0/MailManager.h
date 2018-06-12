@@ -78,13 +78,17 @@ private:
     
     void getIndexes();
     
+    void setDeliverable(bool value);
+    
 private:
     
     ofxCsv m_csv;
     vector<string>  m_addressList;
     
-    string m_currentAddress;
-    TextVisual   m_text;
+    string       m_currentAddress;
+    string       m_previousAddress;
+    TextVisual   m_currentAddressText;
+    TextVisual   m_previousAddressText;
     string       m_url;
     int          m_currentRow;
     string       m_path;
@@ -93,6 +97,7 @@ private:
     int          m_firstNameIndex;
     int          m_lastNameIndex;
     int          m_deliverabilityIndex;
+    bool         m_deliverable;
     
 };
 
