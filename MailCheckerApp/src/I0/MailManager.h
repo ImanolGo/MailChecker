@@ -76,6 +76,8 @@ private:
     
     void createAddressList();
     
+    void getIndexes();
+    
 private:
     
     ofxCsv m_csv;
@@ -90,7 +92,7 @@ private:
     int          m_domainIndex;
     int          m_firstNameIndex;
     int          m_lastNameIndex;
-    int          m_lastNameIndex;
+    int          m_deliverabilityIndex;
     
 };
 

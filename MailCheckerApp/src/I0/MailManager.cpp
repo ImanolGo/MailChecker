@@ -11,7 +11,8 @@
 #include "ofxJSON.h"
 
 
-MailManager::MailManager(): Manager(), m_currentAddress("imanolgo@gmail.com"), m_currentRow(0)
+MailManager::MailManager(): Manager(), m_currentAddress("imanol.gomez@thepowerhouse.group"), m_currentRow(0), m_emailIndex(0), m_domainIndex(0),
+m_firstNameIndex(0), m_lastNameIndex(0), m_deliverabilityIndex(0)
 {
     //Intentionally left empty
 }
@@ -101,11 +102,48 @@ bool MailManager::checkFormat()
     
     if(m_csv.getRow(0).getString(0) == "CONTACTED"){
         ofLogNotice() <<"MailManager::checkFormat -> CSV formatetd correclty ";
+        this->getIndexes();
         return true;
     }
     
     ofLogNotice() <<"MailManager::checkFormat -> Not valid CSV format";
     return false;
+}
+
+void MailManager::getIndexes()
+{
+    for(int j = 0; j < m_csv.getNumCols(0); j++)
+    {
+        if(m_csv[0][j] == "FIRST NAME"){
+            m_firstNameIndex = j;
+             ofLogNotice() <<"MailManager::getIndexes -> First Name Index: " << m_firstNameIndex;
+            
+        }
+        else if(m_csv[0][j] == "LAST NAME"){
+            m_lastNameIndex = j;
+            ofLogNotice() <<"MailManager::getIndexes -> Last Name Index: " << m_lastNameIndex;
+            
+        }
+        
+        else if(m_csv[0][j] == "EMAIL"){
+            m_emailIndex = j;
+            ofLogNotice() <<"MailManager::getIndexes -> Email Index: " << m_emailIndex;
+            
+        }
+        
+        else if(m_csv[0][j] == "DELIVERABILITY"){
+            m_deliverabilityIndex = j;
+            ofLogNotice() <<"MailManager::getIndexes -> Deliverability Index: " << m_deliverabilityIndex;
+            
+        }
+        
+        else if(m_csv[0][j] == "DOMAIN"){
+            m_domainIndex = j;
+            ofLogNotice() <<"MailManager::getIndexes -> Domain Index: " << m_domainIndex;
+            
+        }
+        
+    }
 }
 
 void MailManager::startValidation()
@@ -121,7 +159,7 @@ void MailManager::validateNextRow()
     ofLogNotice() <<"MailManager::validateNextRow: row num = " << m_currentRow;
     
     while(m_currentRow<m_csv.getNumRows()){
-        string address = m_csv.getRow(m_currentRow).getString(7);
+        string address = m_csv.getRow(m_currentRow).getString(m_emailIndex);
         if(address!=""){
             ofLogNotice() <<"MailManager::validateCurretRow -> Verifying email address: " << address;
             this->checkEmail(address);
@@ -142,8 +180,62 @@ void MailManager::validateNextRow()
 void MailManager::createAddressList()
 {
     m_addressList.clear();
-    string first = m_csv.getRow(m_currentRow).getString();
-    last;
+    string first = ofToLower(m_csv.getRow(m_currentRow).getString(m_firstNameIndex));
+    string last = ofToLower(m_csv.getRow(m_currentRow).getString(m_lastNameIndex));
+    string domain = m_csv.getRow(m_currentRow).getString(m_domainIndex);
+    
+    ofLogNotice() <<"MailManager::createAddressList -> First Name: " << first << ", Last Name: " << last << ", Domain: " << domain;
+    
+    //Simple
+    string address = first + "@" + domain; m_addressList.push_back(address);
+    address = last + "@" + domain; m_addressList.push_back(address);
+    
+    //Basic
+    address = first + last + "@" + domain; m_addressList.push_back(address);
+    address = first + "." + last + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + last + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "." + last + "@" + domain; m_addressList.push_back(address);
+    address = first + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = first + "." + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "." + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    
+    //Backwards
+    address = last + first + "@" + domain; m_addressList.push_back(address);
+    address = last + "." + first + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + first + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "." + first + "@" + domain; m_addressList.push_back(address);
+    address = last + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    address = last + "." + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "." + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    
+    //Dashes
+    address = first + "-" + last + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "-" + last + "@" + domain; m_addressList.push_back(address);
+    address = first + "-" + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "-" + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = last + "-" + first + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "-" + first + "@" + domain; m_addressList.push_back(address);
+    address = last + "-" + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "-" + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    
+    //Underscore
+    address = first + "_" + last + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "_" + last + "@" + domain; m_addressList.push_back(address);
+    address = first + "-" + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,first[0]) + "_" + string(1,last[0]) + "@" + domain; m_addressList.push_back(address);
+    address = last + "_" + first + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "_" + first + "@" + domain; m_addressList.push_back(address);
+    address = last + "_" + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    address = string(1,last[0]) + "_" + string(1,first[0]) + "@" + domain; m_addressList.push_back(address);
+    
+    for(auto& address: m_addressList){
+         ofLogNotice() <<"MailManager::createAddressList -> Address: " << address;
+    }
+    
+    
+    
     
 }
 
@@ -218,7 +310,6 @@ void MailManager::urlResponse(ofHttpResponse & response)
 {
     //ofLogNotice() <<"ApiManager::urlResponse -> " << response.data << ", " << response.status;
     
-    
     if(response.status==200)
     {
         ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
@@ -227,7 +318,8 @@ void MailManager::urlResponse(ofHttpResponse & response)
     }
     else if(response.status==500){
         ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
-        m_csv.getRow(m_currentRow).setString(8,"False");
+        m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
+        this->createAddressList();
         this->validateNextRow();
     }
 }
@@ -243,11 +335,13 @@ void MailManager::parseResult(const string& data)
         
         if(derivable){
             ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is DELIVERABLE!";
-            m_csv.getRow(m_currentRow).setString(8,"True");
+            m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"True");
         }
         else{
             ofLogNotice() <<"ApiManager::parseResult << Email " << address << " is NOT  DELIVERABLE!";
-                m_csv.getRow(m_currentRow).setString(8,"False");
+                m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
+                this->createAddressList();
+            
         }
     }
     else{
