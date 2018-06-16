@@ -12,7 +12,7 @@
 
 
 MailManager::MailManager(): Manager(), m_currentAddress("imanol.gomez@thepowerhouse.group"), m_currentRow(0), m_emailIndex(0), m_domainIndex(0),
-m_firstNameIndex(0), m_lastNameIndex(0), m_deliverabilityIndex(0), m_deliverable(true)
+m_firstNameIndex(0), m_lastNameIndex(0), m_deliverabilityIndex(0), m_deliverable(true), m_permutationIndex(0)
 {
     //Intentionally left empty
 }
@@ -35,13 +35,10 @@ void MailManager::setup()
     ofRegisterURLNotification(this);
     
     this->setupText();
-    this->checkEmail(m_currentAddress);
-    
-    
+    this->checkEmail(m_currentAddress, "GivenAddress");
     
     ofLogNotice() <<"MailManager::initialized" ;
 
-    
 }
 
 void MailManager::setupText()
@@ -110,7 +107,7 @@ bool MailManager::checkFormat()
         return false;
     }
     
-    if(m_csv.getRow(0).getString(0) == "CONTACTED"){
+    if(m_csv.getRow(0).getString(0) == "ID"){
         ofLogNotice() <<"MailManager::checkFormat -> CSV formatetd correclty ";
         this->getIndexes();
         return true;
@@ -160,8 +157,32 @@ void MailManager::startValidation()
 {
     m_currentRow = 0;
     this->validateNextRow();
-   
 }
+
+void MailManager::startPermutation()
+{
+    m_permutationIndex = -1;
+    this->createAddressList();
+    this->validateNextPermutation();
+}
+
+
+
+void MailManager::validateNextPermutation()
+{
+    m_permutationIndex++;
+    ofLogNotice() <<"MailManager::validateNextPermutation: permutation num = " << m_permutationIndex;
+    
+    if(m_permutationIndex>=m_addressList.size()){
+        ofLogNotice() <<"MailManager::validateNextPermutation -> FINISHED!!";
+        this->saveResults();
+        this->validateNextRow();
+        return;
+    }
+    
+    this->checkEmail(m_addressList[m_permutationIndex], "PermutationAddress");
+}
+
 
 void MailManager::validateNextRow()
 {
@@ -170,12 +191,21 @@ void MailManager::validateNextRow()
     
     while(m_currentRow<m_csv.getNumRows()){
         string address = m_csv.getRow(m_currentRow).getString(m_emailIndex);
-        if(address!=""){
-            ofLogNotice() <<"MailManager::validateCurretRow -> Verifying email address: " << address;
-            this->checkEmail(address);
+        string deliverability = m_csv.getRow(m_currentRow).getString(m_deliverabilityIndex);
+        if(address.empty()){
+            ofLogNotice() <<"MailManager::validateCurretRow -> Empty email address ";
+            this->startPermutation();
             break;
         }
-        
+       else{
+           if(deliverability.empty()){
+               ofLogNotice() <<"MailManager::validateCurretRow -> Verifying email address: " << address;
+               this->checkEmail(address, "GivenAddress");
+               this->saveResults();
+               break;
+           }
+       }
+       
         m_currentRow++;
         ofLogNotice() <<"MailManager::validateNextRow: row num = " << m_currentRow;
     }
@@ -191,8 +221,13 @@ void MailManager::createAddressList()
 {
     m_addressList.clear();
     string first = ofToLower(m_csv.getRow(m_currentRow).getString(m_firstNameIndex));
+    ofStringReplace(first," ", "");
+    
     string last = ofToLower(m_csv.getRow(m_currentRow).getString(m_lastNameIndex));
+    ofStringReplace(last," ", "");
+    
     string domain = m_csv.getRow(m_currentRow).getString(m_domainIndex);
+    
     
     ofLogNotice() <<"MailManager::createAddressList -> First Name: " << first << ", Last Name: " << last << ", Domain: " << domain;
     
@@ -283,9 +318,10 @@ void MailManager::update()
 
 void MailManager::updateText()
 {
-    m_previousAddressText.setText(m_previousAddress);
+   
     m_currentAddressText.setText(m_currentAddress);
     
+    m_previousAddressText.setText(m_previousAddress);
     if(m_deliverable){
         m_previousAddressText.setColor(ofColor::green);
     }
@@ -308,19 +344,20 @@ void MailManager::drawText()
 
 }
 
-void MailManager::checkEmail(const string& address)
+void MailManager::checkEmail(const string& address, const string& requestName)
 {
     m_url = AppManager::getInstance().getSettingsManager().getUrl();
     m_url+= address;
     m_url+= "&token=";
     m_url+=AppManager::getInstance().getSettingsManager().getKey();
     
+    ofLogNotice() <<"ApiManager::checkEmail -> address " << address << ", request name: " <<requestName ;
     ofLogNotice() <<"ApiManager::checkEmail -> url " << m_url;
     m_previousAddress = m_currentAddress;
     m_currentAddress = address;
     this->updateText();
     
-    ofLoadURLAsync(m_url, m_currentAddress);
+    ofLoadURLAsync(m_url, requestName);
     
     //ofHttpResponse resp = ofLoadURL("https://api.trumail.io/v2/lookups/xml?email=imanolgo@gmail.com&token=e2e9b949-a9e9-489b-9d8f-7f012564c742");
     //ofLogNotice() <<"ApiManager::checkEmail -> DATA " <<  resp.data ;
@@ -331,23 +368,57 @@ void MailManager::urlResponse(ofHttpResponse & response)
 {
     //ofLogNotice() <<"ApiManager::urlResponse -> " << response.data << ", " << response.status;
     
-    if(response.status==200)
+    
+    if(response.request.name=="GivenAddress")
     {
-        ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
-        this->parseResult(response.data);
-        this->validateNextRow();
+        if(response.status==200)
+        {
+            ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
+            this->parseResult(response.data);
+            if(m_deliverable){
+                this->validateNextRow();
+            }
+            else{
+                this->startPermutation();
+            }
+        }
+        
+        else if(response.status==500){
+            ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
+            this->setDeliverable(false, m_currentAddress);
+            this->startPermutation();
+        }
     }
-    else if(response.status==500){
-        ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
-        this->setDeliverable(false);
-        this->createAddressList();
-        this->validateNextRow();
+    else if(response.request.name=="PermutationAddress"){
+        
+        if(response.status==200)
+        {
+            ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
+            this->parseResult(response.data);
+            
+            if(m_deliverable){
+                this->saveResults();
+                this->validateNextRow();
+            }
+            else{
+                this->validateNextPermutation();
+            }
+        }
+        
+        else if(response.status==500){
+            ofLogNotice() <<"ApiManager::urlResponse -> " << response.request.name << ", " << response.status;
+            this->setDeliverable(false, m_currentAddress);
+            this->validateNextPermutation();
+        }
     }
 }
 
-void MailManager::setDeliverable(bool value)
+void MailManager::setDeliverable(bool value, string address)
 {
     m_deliverable = value;
+    m_previousAddress = address;
+    this->updateText();
+    
     if(m_deliverable){
          ofLogNotice() <<"ApiManager::setDeliverable << Email " << m_currentAddress << " is DELIVERABLE!";
          m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"True");
@@ -355,7 +426,11 @@ void MailManager::setDeliverable(bool value)
     else{
           ofLogNotice() <<"ApiManager::setDeliverable << Email " << m_currentAddress << " is NOT  DELIVERABLE!";
           m_csv.getRow(m_currentRow).setString(m_deliverabilityIndex,"False");
+          //this->startPermutation();
     }
+    
+     m_csv.getRow(m_currentRow).setString(m_emailIndex,address);
+    
 }
 
 
@@ -367,7 +442,7 @@ void MailManager::parseResult(const string& data)
     if(json.parse(data)){
         bool derivable = json["deliverable"].asBool();
         string address = json["address"].asString();
-        this->setDeliverable(derivable);
+        this->setDeliverable(derivable, address);
         
     }
     else{

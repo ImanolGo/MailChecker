@@ -60,7 +60,7 @@ private:
     
     string getName(const string& path);
     
-    void checkEmail(const string& address);
+    void checkEmail(const string& address, const string& requestName);
     
     void parseResult(const string& result);
     
@@ -70,7 +70,11 @@ private:
     
     void startValidation();
     
+    void startPermutation();
+    
     void validateNextRow();
+    
+    void validateNextPermutation();
     
     void saveResults();
     
@@ -78,7 +82,7 @@ private:
     
     void getIndexes();
     
-    void setDeliverable(bool value);
+    void setDeliverable(bool value, string address);
     
 private:
     
@@ -91,6 +95,7 @@ private:
     TextVisual   m_previousAddressText;
     string       m_url;
     int          m_currentRow;
+    int          m_permutationIndex;
     string       m_path;
     int          m_emailIndex;
     int          m_domainIndex;

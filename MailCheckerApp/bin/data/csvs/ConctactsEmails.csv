@@ -1,53 +1,148 @@
-CONTACTED;COMPANY;COUNTRY;FIRST NAME;LAST NAME;POSITION;DOMAIN;EMAIL;DELIVERABILITY
-01.06.2018;Louis Vuitton;FRANCE;Jérôme;Guillement;Head Of Mobility & IoT Tribe;fr.vuitton.com;j.guillement@fr.vuitton.com;True
-01.06.2018;Louis Vuitton;FRANCE;Nicolas;Ghesquiere;Creative Director;fr.vuitton.com;n.ghesquiere@fr.vuitton.com;True
-01.06.2018;Louis Vuitton;FRANCE;Christophe;Cochon;New Products Manager;fr.vuitton.com;c.cochon@fr.vuitton.com;True
-01.06.2018;Louis Vuitton;FRANCE;Thibault;Lemaire;Chef de projets Innovation Technologique;fr.vuitton.com;t.lemaire@fr.vuitton.com;True
-;Louis Vuitton;FRANCE;Delphine;Arnault;Executive Vice President;fr.vuitton.com;d.arnault@fr.vuitton.com;True
-01.06.2018;LVMH;FRANCE;Isabelle;Faggianelli;Director - Digital Transformation;lvmh.fr;i.faggianelli@lvmh.fr;True
-01.06.2018;LVMH;FRANCE;Jae;Soh;Head of Digital, Fashion;lvmh.fr;j.soh@lvmh.fr;True
-01.06.2018;LVMH;FRANCE;Bernard;Arnault;CEO;lvmh.fr;b.arnault@lvmh.fr;True
-01.06.2018;Hermès;FRANCE;Guilaume;DeSeynes;General Manager;lvmh.fr;guillaume.deSeynes@hermes.com;True
-hold off;Hermès;FRANCE;Axel;Dumas;CEO;hermes.com;axel.dumas@hermes.com;True
-hold off;Hermès;FRANCE;Nadège;Vanhee-Cybulski;Creative Director;hermes.com;;
-hold off;Hermès;FRANCE;Laurent;Bédé;Directeur innovation, nouveaux usages et business intelligence;hermes.com;laurent.bede@hermes.com;True
-hold off;Hermès;FRANCE;Charles;de la Quintana;Responsable Innovation Cuir & Soie;hermes.com;;
-hold off;COS;SWEDEN;Paula;Bricks;Head of Global Sales;hm.com;;
-hold off;COS;SWEDEN;Christophe;Copin;Head of Menswear design;hm.com;;
-hold off;COS;SWEDEN;Sarah;Coates;Head of Womenswear;hm.com;;
-hold off;Arket;SWEDEN;Anna;Teurnell;Head of design;hm.com;;
-hold off;H&M;SWEDEN;Lena;Sånnell;Innovation Lead;hm.com;;
-hold off;H&M;SWEDEN;Elin;Frendberg;Business Development / Innovation;hm.com;;
-hold off;H&M;SWEDEN;Aspar;Karahyuseinov;Pattern / Innovation / Sustainable Design;hm.com;;
-hold off;H&M;SWEDEN;Linus;Hinzmann;Head Of Marketing;hm.com;;
-hold off;H&M;SWEDEN;Ulrika;Schalin;Trend Forecaster;hm.com;;
-hold off;H&M;SWEDEN;Tomas;Stocksen;Business Development and Innovation;hm.com;;
-01.06.2018;Marni;ITALY;Francesco;Risso;Creative Director;marni.it;francesco.risso@marni.it;False
-01.06.2018;Céline;UK;Daniel;Lee;Design Director RTW;uk.celine.com;d.lee@uk.celine.com;True
-01.06.2018;Céline;UK;Francesca;Fiorentino;Product Development Manager;uk.celine.com;f.fiorentino@uk.celine.com;True
-01.06.2018;Céline;UK;Salvatore;Loiola;Director Product Development;uk.celine.com;s.loiola@uk.celine.com;True
-01.06.2018;Céline;UK;Florence;Lam;RTW Product Manager;uk.celine.com;f.lam@uk.celine.com;True
-;Chloe;FRANCE;Natacha;Ramsay-Levy;Creative Director;chloe.com;;
-01.06.2018;Jil Sander;ITALY;Claudia;Dazzini;Women Product Manager;jilsander.com;claudia.dazzini@jilsander.com;True
-01.06.2018;Jil Sander;ITALY;Alessandra;Bettari;Managing Director;jilsander.com;alessandra.bettari@jilsander.com;True
-01.06.2018;Jil Sander;ITALY;Lucie;Meier;Creative Director;jilsander.com;lucie.meier@jilsander.com;True
-01.06.2018;Vivienne Westwood;UK;Vivienne;Westwood;CEO;viviennewestwood.co.uk;vivienne.westwood@viviennewestwood.co.uk;True
-01.06.2018;Vivienne Westwood;UK;Maia;Guarnaccia;Vice President, Deputy CEO;viviennewestwood.co.uk;maia.guernaccia@viviennewestwood.co.uk;True
-;KERING;FRANCE;Cecilia;Takayama;Director, Materials Innovation Lab;kering.com;cecilia.takayama@kerin.com;False
-;KERING;FRANCE;François-Henri;Pinault;CEO;kering.com;;
-;KERING;FRANCE;Amelie;Lemoine;Innovation Director;kering.com;amelie.lemoine@kering.com;True
-;KERING;FRANCE;Mehdi;Benabadji;Transformation Programme Director;kering.com;mehdi.benabadji@kering.com;True
-;Balenciaga;FRANCE;Cédric;Charbit;CEO;fr.balenziaga.com;cedric.charbit@fr.balenciaga.com;True
-;Balenciaga;FRANCE;Demna;Gvasalia;Creative Director;fr.balenziaga.com;demma.gvasalia@fr.balenciaga.com;True
-;Alexander McQueen;UK;Emmanuel;Gintzburger;CEO;uk.alexandermcqueen.com;emmanuel.gintzburger@uk.alexandermcqueen.com;True
-;Puma;GERMANY;Petula;Clayton;Innovation & Sustainability;puma.com;petula.clayton@puma.com;False
-;Puma;GERMANY;Christian;Harig;Innovation - Research and Insight;puma.com;christian.harig@puma.com;False
-;Puma;GERMANY;Bjorn;Gulden;CEO;puma.com;bjorn.gulden@puma.com;False
-01.06.2018;Hussein Chalayan;UK;Hussein;Chalayan;Creative Director;chalayan.com;hussein@chalayan.com;True
-hold off;Adidas;GERMANY;Gerd;Manz;VP Technology Innovation;adidas.com;gerd.manz@adidas.com;True
-hold off;Adidas;GERMANY;Kathryn;O'Brian;Senior Director, Creative Direction;adidas.com;kathryn.obrian@adidas.com;False
-hold off;Adidas;GERMANY;Kasper;Rørsted;CEO;adidas.com;kasper.rorsted@adidas.com;True
-hold off;Adidas;GERMANY;Dirk;Schönberger;Creative Director;adidas.com;dirk.schoeneberger@adidas.com;False
-hold off;Adidas;GERMANY;Jan;Hill;Senior Director - Technology Innovation;adidas.com;jan.hill@adidas.com;True
-;Chanel;FRANCE;Bruno;Pavolovsky;President of Fashion;chanel.com;;
-;Chanel;FRANCE;Marie Videau;Seigneur;Research, Evaluation & Accerleration of innovation director;chanel.com;;
+ID;CONTACTED;COMPANY;COUNTRY;BRANCH;FIRST NAME;LAST NAME;POSITION;EMAIL;DOMAIN;DELIVERABILITY
+175;;Siemens;GERMANY;Technology;Joe;Kaeser;CEO;joe.kaeser@siemens.com;siemens.com;True
+176;;Siemens;GERMANY;Technology;Emily;Chuang;Innovation Manager;emily.chuang@siemens.com;siemens.com;False
+177;;Siemens;GERMANY;Technology;Holger;Arnold;Director Sales and Marketing;holger.arnold@siemens.com;siemens.com;False
+178;;Siemens;GERMANY;Technology;Jens;Middendorf;Project Manager;jens.middendorf@siemens.com;siemens.com;True
+179;;Siemens mobility;GERMANY;Technology;Michael;Peter;CEO;michael.peter@siemens.com;siemens.com;True
+180;;Siemens mobility;GERMANY;Technology;Julia;Holze;Head of Marketing;julia.holze@siemens.com;siemens.com;True
+187;;Daimler;GERMANY;Technology;;;;martin.bremer@daimler.com;daimler.com;True
+188;;BMW;GERMANY;Technology;;;;Petra.Oexler@bmw.de;bmw.de;True
+189;;Evonik;GERMANY;Technology;Christian;Kullmann;CEO, Chairman;christian.kullmann@evonik.com;evonik.com;True
+190;;Evonik;GERMANY;Technology;Kristina;Kossanyi;Marketing Manager;kristina.kossanyi@evonik.com;evonik.com;True
+191;;Evonik;GERMANY;Technology;Wilhelm;Otten;Head of Business Line;wilhelm.otten@evonik.com;evonik.com;True
+192;;Evonik;GERMANY;Technology;Dr. Anna;Lavrenova;Project Manager;anna.lavrenova@evonik.com;evonik.com;True
+193;;Evonik;GERMANY;Technology;Dr. Michael;Werhahn;Project Manager (New Business development);michael.werhahn@evonik.com;evonik.com;True
+206;;Zeiss;GERMANY;Technology;;;;Danny.Krautz@zeiss.com;zeiss.com;False
+221;;Nokia;FINLAND;Technology;Rajeev;Suri;CEO, President;rajeev.suri@nokia.com;nokia.com;True
+222;;Nokia;FINLAND;Technology;Kathrin;Buvac;Chief Strategy Officer;kathrin.buvac@nokia.com;nokia.com;True
+223;;Nokia;FINLAND;Technology;Miriam;Meijers;Head of strategy Europe;miriam.meijers@nokia.com;nokia.com;True
+224;;Nokia;FINLAND;Technology;Jaouid;Bourqia;Strategic Tranfsormation;haouid.bourqia@nokia.com;nokia.com;True
+225;;Nokia;FINLAND;Technology;Markus;Borchert;Senior VP;markus.borchert@nokia.com;nokia.com;True
+226;;Nokia;FINLAND;Technology;Tom;Müller;Innovation Partnering & Ventures Management;tom.mueller@nokia.com;nokia.com;True
+227;;LyondellBasell;NETHERLANDS;Technology;Bhavesh;Batel;CEO;Bhavesh.Batel@lyondellbasell.com;LyondellBasell.com;True
+228;;LyondellBasell;NETHERLANDS;Technology;Thomas;Aebischer;Vice president;Thomas.Aebischer@lyondellbasell.com;LyondellBasell.com;True
+229;;LyondellBasell;NETHERLANDS;Technology;Alessandro;Guidicini;ADTS & Innovation;Alessandro.Guidicini@lyondellbasell.com;LyondellBasell.com;True
+230;;LyondellBasell;NETHERLANDS;Technology;Detlef;Schramm;Europe/Africa/Asia/India Market Manager;Detlef.Schramm@lyondellbasell.com;LyondellBasell.com;True
+241;;Vivendi;FRANCE;Technology;Arnaud;de Puyfontaine;CEO;arnaud.depuyfontaine@vivendi.com;vivendi.com;True
+242;;Vivendi;FRANCE;Technology;Stepháne;Roussel;COO;stephane.roussel@vivendi.com;vivendi.com;True
+243;;Vivendi;FRANCE;Technology;Xavier;Le Roy;Executive VP, Head of Investor Relations;xavier.leroy@vivendi.com;vivendi.com;True
+244;;Vivendi;FRANCE;Technology;Hervé;Philippe;CFO;herve.philippe@vivendi.com;vivendi.com;True
+251;;Philips;NETHERLANDS;Technology;Frans;Van Houten;CEO;frans.van.houten@philips.com;philips.com;False
+252;;Philips;NETHERLANDS;Technology;Peter;Sommerfeld;;peter.sommerfeld@kre.mimo.philips.com;philips.com;False
+253;;Philips Lighting (Signify);NETHERLANDS;Technology;David;Nicholl;President & CEO;david.nicholl@philips.com;philips.com;False
+254;;Philips Lighting (Signify);NETHERLANDS;Technology;Hans;Nikol;Head of IoT, VP Head of open Innovation;hans.nikol@philips.com;philips.com;True
+255;;Philips Lighting (Signify);NETHERLANDS;Technology;Olivia;Ronghong Qiu;Chief Innovation Officer;olivia.ronghong.qiu@philips.com;philips.com;False
+256;;Philips Lighting (Signify);NETHERLANDS;Technology;Giovanni;Ciennini;Senior Director Innovation;giovanni.ciennini@philips.com;philips.com;False
+257;;Philips Lighting (Signify);NETHERLANDS;Technology;Elco;van Groningen;Corporate media relationd;elco.van.groningen@philips.com;philips.com;True
+258;;Philips Lighting (Signify);NETHERLANDS;Technology;Freyja;Heeschen;Strategic Project Manager;freyja.heeschen@philips.com;philips.com;False
+259;;Philips Lighting (Signify);NETHERLANDS;Technology;Neil;Pattie;Head of product media relation;neil.pattie@philips.com;philips.com;True
+260;;Philips Lighting (Signify);NETHERLANDS;Technology;Paula;den Dunnen;Consumer lighting;paula.den.dunen@philips.com;philips.com;False
+261;;Philips Lighting (Signify);NETHERLANDS;Technology;Anne-Marie;Sleurink;Professional Lighting;anne-marie.sleurink@philips.com;philips.com;True
+262;;Ericsson;SWEDEN;Technology;Börje;Eckholm;CEO;Boerje.eckholm@ericsson.com;ericsson.com;True
+263;;Ericsson;SWEDEN;Technology;Ruth;Guerra;Head of Strategy;ruth.guerra@ericsson.com;ericsson.com;True
+264;;Ericsson;SWEDEN;Technology;Stig;Persson;Head of IT Strategy;stig.persson@ericsson.com;ericsson.com;True
+265;;Ericsson;SWEDEN;Technology;Aniruddho;Baso;VP & Head of Strategy;aniruddho.baso@ericsson.com;ericsson.com;True
+266;;Ericsson;SWEDEN;Technology;Matilda;George;Innovation Ecosystem Engagement;matilda.george@ericssson.com;ericsson.com;False
+269;;Teufel;GERMANY;Technology;Sascha;Mallah;CEO;sasha.mallah@teufel.de;teufel.de;True
+270;;Teufel;GERMANY;Technology;Julian;Theisselmann;Innovation Manager;julian.theisselmann@teufel.de;teufel.de;True
+271;;Teufel;GERMANY;Technology;Matthias;Paratsch;Head of Corporate Strategy;matthias.paratsch@teufel.de;teufel.de;True
+272;;Teufel;GERMANY;Technology;Sebastian;Drawert;General Manager Marketing;sebastian.drawert@teufe.de;teufel.de;False
+273;;Teufel;GERMANY;Technology;Florian;Weidhase;Press & PR;florian.weidhase_ext@teufel.de;teufel.de;True
+274;;Teufel;GERMANY;Technology;Sebastian;Thuemmel;Leiter PR;thuemmel@teufe.de;teufel.de;False
+275;;Bang&Olufsen;DENMARK;Technology;Henrik;Clausen;CEO;hcl@bang-olufsen.dk;bang-olufsen.dk;True
+276;;Bang&Olufsen;DENMARK;Technology;Anton;Greiffenberg;Head of Global PR and Social Media;agr@bang-olufsen.dk;bang-olufsen.dk;False
+277;;Bang&Olufsen;DENMARK;Technology;Andreas;Kloeser;Geschäftsführender Gesellschafter;akl@bang-olufsen.dk;bang-olufsen.dk;False
+278;;Bang&Olufsen;DENMARK;Technology;Brian;Stilling Laursen;Head of Enterprise sales;bln@bang-olufsen.dk;bang-olufsen.dk;True
+279;;Bang&Olufsen;DENMARK;Technology;Ercan;Vural;Key Account Manager DACH and southern europe;evu@bang-olufsen.dk;bang-olufsen.dk;True
+280;;Bang&Olufsen;DENMARK;Technology;Barry;Pim;Key Account Manager UK;bpi@bang-olufsen.dk;bang-olufsen.dk;True
+282;;IconMobile;GERMANY;Technology;Michael;Wolters;Associate Managing Director;michael.wolters@iconincar.com;iconincar.com;True
+284;;Fraunhofer Gesellschaft;GERMANY;Technology;Reimund;Neugebauer;Präsident;reimund.neugebauer@iwu.fraunhofer.de;iwu.fraunhofer.de;True
+285;;Fraunhofer Gesellschaft;GERMANY;Technology;Bjoern;Goetzfried;Technology Commercialization and Innovation Manager;bjoern.goetzfried@iwu.fraunhofer.de;iwu.fraunhofer.de;False
+286;;Fraunhofer Gesellschaft;GERMANY;Technology;Dr. Robin;Buerger;Head of Innovation Financing Unit;robin.buerger@iwu.fraunhofer.de;iwu.fraunhofer.de;False
+294;;Intel;US (EU);Technology;Brian;Quinn;Director of European Innovation;brian.quinn@intel.com;intel.com;True
+297;;Henkel;GERMANY;Technology;Paolo;Bavaj;Head of Corporate Venturing;paolo.bavaj@henkel.com;henkel.com;True
+299;;Henkel;GERMANY;Technology;Marius;Swart;Digital Acceleration Lead - Operations & Strategy;marius.swart@henkel.com;henkel.com;True
+300;;Henkel;GERMANY;Technology;Peter;Kuhm;Business Director;peter.kuhm@henkel.com;henkel.com;True
+301;;Henkel;GERMANY;Technology;Edelina;Natale;Innovation- and Trend Manager;edelina.natale@henkel.com;henkel.com;True
+302;;Henkel;GERMANY;Technology;Michael;Simon;Field Sales Manager;michael.simon@henkel.com;henkel.com;True
+303;;Henkel;GERMANY;Technology;Sven;Schnell;Account Manager;sven.schnell@henkel.com;henkel.com;True
+304;;Henkel;GERMANY;Technology;Renata;Casaro;Investor & Analyst Contact;renata.casaro@henkel.com;henkel.com;True
+305;;Henkel;GERMANY;Technology;Dominik;Plewka;Investor & Analyst Contact;dominik.plewka@henkel.com;henkel.com;True
+306;;Henkel;GERMANY;Technology;Cedric;Schupp;Investor & Analyst Contact;cedric.schupp@henkel.com;henkel.com;True
+307;;Henkel;GERMANY;Technology;Dr. Eva;Sewing;Investor & Analyst Contact;eva.sewing@henkel.com;henkel.com;True
+308;;Henkel;GERMANY;Technology;Lars;Witteck;Media Contact;lars.witteck@henkel.com;henkel.com;True
+309;;Henkel;GERMANY;Technology;Wulf;Klüppelholz;Media Contact;wulf.klueppelholz@henkel.com;henkel.com;True
+310;;Henkel;GERMANY;Technology;Hanna;Philips;Media Contact;hanna.philips@henkel.com;henkel.com;True
+311;;Spotify;SWEDEN;Technology;Daniel;EK;CEO;daniel.ek@spotify.com;spotify.com;True
+314;;Spotify;SWEDEN;Technology;Nick;Durbin;Director of Technical Operations;ndurbin@spotify.com;spotify.com;True
+315;;Spotify;SWEDEN;Technology;Seth;Farbman;CMO;seth@spotify.com;spotify.com;True
+318;;3M;US (EU);Technology;Judith;Seifert;Manager Marketing Communications & emerging Markets Europe;travis@spotify.com;spotify.com;True
+319;;3M;US (EU);Technology;;;Communication and Public Relations;innovation.de@mmm.com;mmm.com;True
+367;;PKC Group;FINLAND;Technology;Matti;Hyytiainen;CEO;matti.hyytiainen@pkcgroup.com;pkcgroup.com;False
+368;;PKC Group;FINLAND;Technology;Matti;Ruotsala;Chairman;matti.ruotsala@pkcgroup.com;pkcgroup.com;False
+369;;PKC Group;FINLAND;Technology;Sinikka;Ravander;Senior Executive Assistant;sinikka.ravander@pkcgroup.com;pkcgroup.com;False
+371;;All Circuits;FRANCE;Technology;General;Contact;;commercial@allcircuits.com;allcircuits.com;True
+372;;All Circuits BMS;FRANCE;Technology;General;Contact;Commercial;contact.commercial@bmscircuits.com;bmscircuits.com;True
+373;;All Circuits BMS;FRANCE;Technology;General;Contact;Quality;customercare@bmscircuits.com;bmscircuits.com;True
+374;;All Circuits BMS;FRANCE;Technology;General;Contact;Communications;contact@bmscircuits.com;bmscircuits.com;True
+375;;All Circuits AC;FRANCE;Technology;General;Contact;Office in electronics and computer technology;designcentre@allcircuits.com;allcircuits.com;True
+376;;All Circuits TIS;FRANCE;Technology;General;Contact;Communications;communication@allcircuits.com;allcircuits.com;True
+377;;All Circuits TIS;FRANCE;Technology;General;Contact;Commercial;commerce@tiscircuits.com;tiscircuits.com;True
+379;;Lacroix Electronics;FRANCE;Technology;Vincent;Bedouin;Chairman of the Board;v.bedouin@lacroix.fr;lacroix.fr;True
+380;;Lacroix Electronics;FRANCE;Technology;Nicolas;Bedouin;Finance Director;n.bedouin@lacroix.fr;lacroix.fr;True
+381;;Lacroix Electronics;FRANCE;Technology;Stéphane;Klajzyngier;Managing Director;s.klajzyngier@lacroix.fr;lacroix.fr;False
+382;;Lacroix Electronics;FRANCE;Technology;Catherine;Failliet;Managing Director;c.failliet@lacroix.fr;lacroix.fr;False
+383;;Lacroix Electronics;FRANCE;Technology;Landry;Chiron;Communications Director;l.chiron@lacroix.fr;lacroix.fr;True
+384;;Lacroix Electronics;FRANCE;Technology;Stéphane;Gervais;Strategic Innovations Director;s.gervais@lacroix.fr;lacroix.fr;True
+385;;Lacroix Electronics;FRANCE;Technology;Loic;Goulard;Information Technology Director;l.goulard@lacroix.fr;lacroix.fr;True
+386;;Lacroix Electronics;FRANCE;Technology;Franck;Legrand;General Counsel;f.legrand@lacroix.fr;lacroix.fr;True
+387;;Lacroix Electronics;FRANCE;Technology;General;Contact;Headquarters;info@lacroix.fr;lacroix.fr;True
+388;;Lacroix Electronics;FRANCE;Technology;General;Contact;Lacroix Electronics;sales@lacroix-electronics.com;lacroix-electronics.com;True
+389;;Lacroix Electronics;FRANCE;Technology;General;Contact;Lacroix Sofrel;sofrel@sofrel.com;sofrel.com;False
+390;;Lacroix Electronics;FRANCE;Technology;General;Contact;Lacroix City;lacroix@lacroix.fr;lacroix.fr;True
+398;;BMK Group;GERMANY;Technology;Nafi;Pajaziti;Grschäftsführer;nafi.pajaziti@bmk-electronics.de;bmk-group.de;True
+399;;BMK Group;GERMANY;Technology;General;Contact;;info@bmk-group.de;bmk-group.de;True
+400;;BMK Group;GERMANY;Technology;Rita;Ruf;Personalleiterin;rita.ruf@bmk-electronics.de;bmk-electronics.de;True
+401;;BMK Group;GERMANY;Technology;Dieter;Mueller;Sales Contact;dieter.mueller@bmk-electronics.de;bmk-electronics.de;True
+402;;BMK Group;GERMANY;Technology;Yassine;Aboulhorma;Prozessmanager;yassine.aboulhorma@bmk-electronics.de;bmk-group.de;True
+403;;BMK Group;GERMANY;Technology;Katherina;Alscher;Strategischer Projekteinkauf;katherina.alscher@bmk-electronics.de;bmk-group.de;False
+404;;BMK Group;GERMANY;Technology;Babett;Deckert;Prozessmanagr Internationale Fertigung;babett.deckert@bmk-electronics.de;bmk-group.de;True
+412;;TQ-Group;;Technology;General;Contact;;info@tq-group.com;tq-group.com;True
+413;;Melecs;AUSTRIA;Technology;Friedrich;Pressel;Leitung;friedrich.pressel@melecs.com;melecs.com;True
+414;;Melecs;AUSTRIA;Technology;Ernst;Mayrhofer;Leitung;ernst.mayrhofer@melecs.com;melecs.com;True
+415;;Melecs;AUSTRIA;Technology;Bernhard;Pulverer;Leitung;bernhard.pulverer@melecs.com;melecs.com;True
+416;;Melecs;AUSTRIA;Technology;Dr. Thomas;Doppler;Manager R&D;thomas.doppler@melecs.com;melecs.com;True
+417;;Melecs;AUSTRIA;Technology;General;Contact;;office@melecs.com;melecs.com;True
+418;;Elemaster;ITALY;Technology;Gabriele;Cogliati;CEO;gabriele.cogliati@elemaster.it;elemaster.it;True
+419;;Elemaster;ITALY;Technology;Massimiliano;Redaelli;Quality Assurance;massimiliano.redaelli@elemaster.it;elemaster.it;True
+420;;Elemaster;ITALY;Technology;General;Contact;;elemaster@elemaster.com;elemaster.com;True
+421;;Elemaster;ITALY;Technology;General;Contact;;europe@elemaster.com;elemaster.com;True
+423;;Primepulse;GERMANY;Technology;Klaus;Weinmann;Co-Founder of Primepulse (CEO of Cancom);klaus.weinmann@cancom.de;cancom.de;True
+424;;Primepulse;GERMANY;Technology;Stefan;Kober;Co-Founder of Primepulse (CEO of AL-CO);Stefan.Kober@al-ko.de;al-ko.de;True
+425;;Primepulse;GERMANY;Technology;Beate;Rosenfeld;Head of Group Brand and Communication;beate.rosenfeld@primepulse.de;primepulse.de;True
+426;;Primepulse;GERMANY;Technology;General;Contact;;kontakt@primepuls.de;primepuls.de;False
+427;;IEE;LUXEMBURG;Technology;Michel;Witte;CEO;michael.wittw@iee.lu;iee.lu;False
+428;;IEE;LUXEMBURG;Technology;Aloyse;Schoos;R&D Contact;aloyse.schoos@iee.lu;iee.lu;True
+429;;IEE;LUXEMBURG;Technology;Edith;Belso;Marketing communication Manager;edith.belso@iee.lu;iee.lu;True
+430;;IEE;LUXEMBURG;Technology;Maggie;Barclay;Press Contact;maggie.barclay@iee.lu;iee.lu;False
+431;;IEE;LUXEMBURG;Technology;Sara;Nobels-Freeman;Press Contact;sara.nobels-freeman@iee.lu;iee.lu;False
+432;;IEE;LUXEMBURG;Technology;Karl;Billen;;karl.billen@iee.lu;iee.lu;False
+433;;IEE;LUXEMBURG;Technology;General;Contact;;iee@iee.lu;iee.lu;True
+434;;TEMIC (Continental) sensors;GERMANY;Technology;Matthias;Aikele;R&D;matthias.aikele@temic.de;temic.de;False
+435;;TEMIC (Continental) sensors;GERMANY;Technology;Roland;Polonio;Product Marketing Manager;roland.polonio@temic-semi.de;temic-semi.de;False
+436;;VDI/VDE-IT;GERMANY;Technology;Peter;Dortans;Leitung;dortans@vdivde-it.de;vdivde-it.de;True
+437;;VDI/VDE-IT;GERMANY;Technology;Dr. Werner;Wilke;Leitung;wilke@vdivde-it.de;vdivde-it.de;True
+438;;VDI/VDE-IT;GERMANY;Technology;Wolfgang;Gessner;Head of Dept. Future Technologies and Europe;gessner@vdivde-it.de;vdivde-it.de;True
+439;;VDI/VDE-IT;GERMANY;Technology;Uwe;Klaedtke;Data Processing officer;uwe.klaedtke@vdivde-it.de;vdivde-it.de;True
+440;;VDI/VDE-IT;GERMANY;Technology;Detlef;Ricken;Advanced Microsystems;ricken@vdivde-it.de;vdivde-it.de;True
+441;;VDI/VDE-IT;GERMANY;Technology;Wiebke;Ehret;Press Contact;wiebke.ehert@vdivde-it.de;vdivde-it.de;True
+443;;Infineon;GERMANY;Technology;Reinhard;Ploss;CEO & Chairman of the executive Board;bernd.hops@infineon.com;infineon.com;True
+444;;Infineon;GERMANY;Technology;Sabine;Herlitschka;CEO of Infineon Austria;sabine.herlitschka@infineon.com;infineon.com;True
+445;;Infineon;GERMANY;Technology;Wolfgang;Mayrhuber;Chairman of the supervisory Board;wolfgang.mayrhuber@infineon.com;infineon.com;False
+446;;Infineon;GERMANY;Technology;Bernd;Hops;Media Relations worldwide Headquarters;bernd.hops@infineon.com;infineon.com;True
+447;;Infineon;GERMANY;Technology;General;Contact;Investor relations Worldwide;investor.relations@infineon.com;infineon.com;True
+448;;Infineon;GERMANY;Technology;Dr. Markus;Löhndorf;Director Application, Technology & innovation;markus.loehndorf@infineon.com;infineon.com;True
+450;;Ricardo plc;UK;Technology;Paul;Etheridge;General inquiries Germany;paul.etheridge@ricardo.com;ricardo.com;True
+451;;Ricardo plc;UK;Technology;Neil;Wright;General inquiries UK;neil.wright@ricardo.com;ricardo.com;True
+452;;Ricardo plc;UK;Technology;Massimo;Cipriani;General Inquiries Italy;massimo.cipriani@ricardo.com;ricardo.com;True
+453;;Ricardo plc;UK;Technology;Simon;Schnurrer;Strategic consulting services;simon.schnurrer@ricardo.com;ricardo.com;True
